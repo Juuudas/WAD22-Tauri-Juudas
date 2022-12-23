@@ -9,7 +9,17 @@
             <th>Credits</th>
             <th>Description</th>
           </tr>
-
+  <tr class="item" v-for="course in courses" :key="course.id">
+    <td> {{ course.code }} </td>
+    <td>{{ course.title}} </td>
+    <td> {{ course.semester}}</td>
+    <td>{{ course.credits }} </td>
+<!--
+    <td>{{ course.description }} </td>
+-->
+    <td v-if="course.description === ''">No course description is provided.</td>
+    <td v-else>{{course.description}}</td>
+  </tr>
 
 </table> 
 </div>
@@ -39,5 +49,18 @@ export default {
 </script>
 
 <style scoped>
-
+h3 {
+  font-size: 25px;
+}
+th {
+  background: rgb(100, 151, 122);
+}
+td {
+  background: rgb(186, 228, 204);
+}
+th, td {
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding: 8px 10px;
+}
 </style>
