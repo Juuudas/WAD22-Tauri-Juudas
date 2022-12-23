@@ -12,7 +12,7 @@
   <tr class="item" v-for="course in courses" :key="course.id">
     <td> {{ course.code }} </td>
     <td>{{ course.title}} </td>
-    <td> {{ course.semester}}</td>
+    <td> <a href="../semesters/" onclick="location.href=this.href + {{ course.semester}} ;return false;"> {{ course.semester}} </a></td>
     <td>{{ course.credits }} </td>
 <!--
     <td>{{ course.description }} </td>
